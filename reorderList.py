@@ -43,3 +43,36 @@ def list_to_linkedlist(arr):
         current.next = ListNode(val)
         current = current.next
     return head
+
+
+
+class TestReorderList(unittest.TestCase):
+    def test_example1(self):
+        head = list_to_linkedlist([1, 2, 3, 4])
+        Solution().reorderList(head)
+        self.assertEqual(linkedlist_to_list(head), [1, 4, 2, 3])
+
+    def test_example2(self):
+        head = list_to_linkedlist([1, 2, 3, 4, 5])
+        Solution().reorderList(head)
+        self.assertEqual(linkedlist_to_list(head), [1, 5, 2, 4, 3])
+
+    def test_single_node(self):
+        head = list_to_linkedlist([1])
+        Solution().reorderList(head)
+        self.assertEqual(linkedlist_to_list(head), [1])
+
+    def test_two_nodes(self):
+        head = list_to_linkedlist([1, 2])
+        Solution().reorderList(head)
+        self.assertEqual(linkedlist_to_list(head), [1, 2])
+
+    def test_empty(self):
+        head = list_to_linkedlist([])
+        Solution().reorderList(head)
+        self.assertEqual(linkedlist_to_list(head), [])
+
+# Run tests when the script is executed
+if __name__ == "__main__":
+    unittest.main()
+
