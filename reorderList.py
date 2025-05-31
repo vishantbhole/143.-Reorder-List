@@ -1,3 +1,20 @@
+#143. Reorder List
+
+import unittest
+
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+    # For easy test output
+    def __repr__(self):
+        result = []
+        node = self
+        while node:
+            result.append(str(node.val))
+            node = node.next
+        return "->".join(result)
 
 
 class Solution(object):
@@ -44,8 +61,13 @@ def list_to_linkedlist(arr):
         current = current.next
     return head
 
-
-
+def linkedlist_to_list(head):
+    result = []
+    while head:
+        result.append(head.val)
+        head = head.next
+    return result
+  
 class TestReorderList(unittest.TestCase):
     def test_example1(self):
         head = list_to_linkedlist([1, 2, 3, 4])
