@@ -60,3 +60,10 @@ def list_to_linkedlist(arr):
         current.next = ListNode(val)
         current = current.next
     return head
+
+def linkedlist_to_list(head):
+    result = []
+    while head:
+        result.append(head.val)
+        head = head.next
+    return result
