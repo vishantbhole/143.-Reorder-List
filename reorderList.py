@@ -1,5 +1,5 @@
-#143. Reorder List
 
+#143. Reorder List
 import unittest
 
 class ListNode(object):
@@ -15,7 +15,6 @@ class ListNode(object):
             result.append(str(node.val))
             node = node.next
         return "->".join(result)
-
 
 class Solution(object):
     def reorderList(self, head):
@@ -41,7 +40,6 @@ class Solution(object):
             second.next = prev
             prev = second
             second = tmp
-
         # Step 3: Merge two halves
         first, second = head, prev
         while second:
